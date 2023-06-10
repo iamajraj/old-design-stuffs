@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: gray;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-group {
+    position: relative;
+}
+
+.big-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 300px;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid white;
+    transition: 0.2s all ease;
+    transform-origin: 50%;
+}
+
+.big-card:nth-child(1) {
+    background-color: blue;
+}
+.big-card:nth-child(2) {
+    background-color: green;
+}
+.big-card:nth-child(3) {
+    background-color: aqua;
+}
+
+.card-group:hover .big-card:nth-child(1) {
+    transform: rotateX(30deg) translateX(-100px);
+}
+
+.card-group:hover .big-card:nth-child(2) {
+    transform: rotate(20deg);
+}
+
+.card-group:hover .big-card:nth-child(3) {
+    transform: rotate(40deg);
+}
