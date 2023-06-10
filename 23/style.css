@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+    height: 10vh;
+    position: relative;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger img{
+    height: 36px;
+}
+
+.nav-container .logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-container .logo h1{
+    font-size: 2rem;
+}
+.nav-container .logo img{
+    height: 4.6rem;
+}
+.nav-container .menus ul{
+    display: flex;
+    align-items: center;
+}
+.nav-container .menus ul li{
+    list-style: none;
+}
+.nav-container .menus ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+}
+.nav-container .menus ul li:not(:last-child){
+    margin-right: 3.5rem;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 90vh;
+}
+
+.content .left-content{
+    max-width: 50%;
+    margin-top: 10%;
+}
+
+.content .left-content h1{
+    font-size: 4rem;
+}
+
+.content .left-content h1 span{
+    color: orangered;
+}
+
+.content .left-content p{
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+.content .left-content .buttons{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.content .left-content .buttons img{
+    height: 4rem;
+}
+.content .left-content .buttons a{
+    color: white;
+    text-decoration: none;
+    background-color: rgb(89, 0, 255);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 2rem;
+}
+
+.content .right-image{
+    position: absolute;
+    right: 0;
+    bottom: -5rem;
+
+}
+
+.content .right-image img{
+    height: 70rem;
+}
+
+@media (max-width:960px) {
+    .menus{
+        display: none;
+    }
+    .content .left-content{
+        max-width: 100%;
+        margin-bottom: 4rem;
+    }
+    .content{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .content .right-image img{
+        height: 40rem;
+        transform: rotate(-25deg);
+    }
+
+    .content .right-image{
+        position: relative;
+        padding: 0 10%;
+    }
+
+    .content .right-image::after{
+        content: '';
+        width: 10rem;
+        height: 10rem;
+        background-color: rgb(89, 0, 255);
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        right: -5;
+    }
+    .content .right-image::before{
+        content: '';
+        width: 10rem;
+        height: 10rem;
+        background-color: rgb(89, 0, 255);
+        border-radius: 50%;
+        position: absolute;
+        bottom: 0;
+        left: -5;
+    }
+
+    .hamburger{
+        display: inline-flex;
+    }
+
+
+}

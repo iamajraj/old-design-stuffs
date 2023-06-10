@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto';
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.btn {
+  padding: 7px 16px;
+  font-size: 1rem;
+  border-radius: 10px;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(255, 126, 51);
+}
+
+nav .logo {
+  font-size: 1.4rem;
+}
+
+nav .search-box {
+  flex-grow: 0.6;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  border-radius: 50px;
+  background-color: #eee;
+}
+
+.search-box .bx-search {
+  font-size: 20px;
+  color: rgb(148, 148, 148);
+}
+
+.search-box .search_input {
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-left: 10px;
+}
+
+nav .list-items {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.list-items li:not(.btn) {
+  margin: 0 1rem;
+}
+
+.list-items li a {
+  text-decoration: none;
+  color: black;
+}
+
+.list-items .btn {
+  margin: 0 0.5rem;
+}
+
+.list-items .btn a {
+  color: white;
+}
+
+section.main {
+  height: 30rem;
+  padding: 0 3rem;
+  background-color: rgb(255, 154, 21);
+  clip-path: ellipse(102% 100% at 38.04% 0%);
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3rem;
+  color: white;
+}
+
+.wrapper .image {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.wrapper .image img {
+  width: 100%;
+  height: 90%;
+}
+
+.content {
+  text-align: end;
+}
+
+.content .content_header {
+  font-size: 7rem;
+  line-height: 70px;
+}
+
+.content .content_header span {
+  display: block;
+  font-size: 3rem;
+}
+
+.content .content_desc {
+  max-width: 350px;
+  margin-top: 1.5rem;
+  font-size: 16px;
+}
+
+.content .btn {
+  display: inline-flex;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+}
+
+section.products-section {
+  width: 100%;
+  margin: 4rem 0;
+  padding: 0 3rem;
+}
+
+.products-wrapper {
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+}
+
+.products-wrapper h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.products_container {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 250px));
+  gap: 1rem;
+}
+
+.product {
+  width: 100%;
+  border: 1px solid #efefef;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.product:hover {
+  transform: scale(1.05);
+  z-index: 9;
+}
+
+.product img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-bottom: 1px solid #eee;
+}
+
+.product .product-details {
+  padding: 1rem;
+}
+
+.product-details h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.product-details p {
+  font-size: 12px;
+  margin: 0.5rem 0;
+}
+
+.product-details .price-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.product-details .buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.product-details .buttons button {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 15px;
+  background: rgb(255, 87, 21);
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.product-details .buttons button:hover {
+  background: rgba(255, 87, 21, 0.8);
+}
+
+.product-details .buttons button:last-child {
+  padding: 14px 10px;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+section.cta-banner {
+  width: 100%;
+  height: 10rem;
+  margin: 10rem 0;
+  background: rgb(255, 154, 21);
+  padding: 0 3rem;
+}
+
+.cta-banner .wrapper {
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cta-banner h1 {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.cta-banner button {
+  padding: 0.7rem 1.5rem;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  color: rgb(255, 154, 21);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 950px) {
+  .list-items li:not(.btn) {
+    display: none;
+  }
+  section.main {
+    height: 35rem;
+  }
+  .wrapper {
+    flex-direction: column-reverse;
+    height: 100%;
+  }
+  .wrapper .image img {
+    width: 200px;
+  }
+  .content {
+    text-align: center;
+  }
+  .content .content_header {
+    font-size: 5rem;
+    margin-top: 2rem;
+  }
+  .content .content_header span {
+    display: inline-block;
+  }
+  .content .content_desc {
+    width: 100%;
+    margin: 1rem auto;
+  }
+}

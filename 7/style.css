@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+nav {
+  display: flex;
+  /* display: none; */
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: black;
+  text-transform: uppercase;
+}
+
+nav .btn {
+  display: inline-flex;
+  padding: 0.5rem 0.7rem;
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* max-width: 350px;
+  width: 80%; */
+  max-width: 500px;
+  width: 80%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: all 0.2s;
+  display: flex;
+  overflow: hidden;
+}
+
+.section-image {
+  flex-grow: 1;
+}
+
+.section-image img {
+  min-width: 200px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-content {
+  padding: 1rem;
+}
+
+.section-content p {
+  font-size: 13px;
+}
+
+.section-content .btn {
+  padding: 0.4rem 0.6rem;
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 550px) {
+  .section-image img {
+    min-width: 100px;
+  }
+  .section-content {
+    padding: 0.5rem;
+    overflow: hidden;
+  }
+  .section-content h3 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 13px;
+    margin-bottom: 0.2rem;
+  }
+  .section-content p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 11px;
+  }
+  .section-content .btn {
+    font-size: 10px;
+    margin-top: 0.3rem;
+    padding: 0.2rem 0.4rem;
+    margin-left: auto;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* .section-image {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.section-image img {
+  width: 100%;
+  min-height: 250px;
+  object-fit: cover;
+}
+
+.section-content {
+  padding: 1rem 1rem 2rem;
+}
+
+.section-content h3 {
+  margin-bottom: 0.5rem;
+  font-size: 24px;
+}
+
+.section-content p {
+  margin-bottom: 2rem;
+  color: gray;
+} */
+
+.btn {
+  display: block;
+  width: max-content;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(35, 112, 255);
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: rgb(12, 92, 241);
+}

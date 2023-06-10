@@ -1,0 +1,146 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <style id="cStyle">
+            .canim {
+                animation: canim 0.4s ease-in;
+            }
+        </style>
+    </head>
+    <body>
+        <main class="pt-[70px] min-h-screen w-full bg-[#282828] text-white">
+            <div class="min-w-fit p-5 mx-auto flex flex-col items-center">
+                <p>Hello!</p>
+                <p>
+                    Type here... &DoubleDownArrow;
+                    <span class="text-sm text-blue-200">help;</span>
+                </p>
+                <div class="flex items-center">
+                    <p class="">&DoubleRightArrow;</p>
+                    <input
+                        type="text"
+                        class="pl-[20px] mt-2 bg-transparent border-b animate-pulse border-gray-500 text-white outline-none py-2"
+                    />
+                </div>
+                <div
+                    class="exe flex flex-col items-start mt-4 w-full max-w-[300px]"
+                ></div>
+            </div>
+        </main>
+
+        <script>
+            const exe = document.querySelector(".exe");
+            const cInput = document.querySelector('[type="text"]');
+
+            window.onload = () => {
+                const style = document.querySelector("#cStyle");
+                style.textContent += "@keyframes canim {";
+                for (let i = 0; i <= 10; i++) {
+                    style.textContent += `${i * 10}% { opacity: ${i / 10}; }`;
+                }
+                style.textContent += "}";
+                console.log(style);
+            };
+
+            cInput.addEventListener("keyup", (e) => {
+                if (e.keyCode === 13) {
+                    if (cInput.value.trim() !== "") {
+                        let cmd = cInput.value.trim();
+                        cInput.value = "";
+                        const p = document.createElement("p");
+                        exe.append(p);
+                        p.classList.add(
+                            "w-full",
+                            "text-[8px]",
+                            "text-green-300",
+                            "animate-pulse",
+                            "canim"
+                        );
+                        whichOne(cmd, p);
+                    }
+                }
+            });
+
+            function whichOne(text, el) {
+                switch (text) {
+                    case "help": {
+                        doLoop("HELP!!!^   *about^   *help*^   *whoami", el);
+                        break;
+                    }
+                    case "hi": {
+                        doLoop("Hello!", el);
+                        break;
+                    }
+                    case "hello": {
+                        doLoop("Hi!", el);
+                        break;
+                    }
+                    case "about": {
+                        doLoop(
+                            `Hey, I'm Forrest!👋
+
+            I'm a software developer and content creator, who builds engaging websites like this one
+
+            and makes YouTube videos about computer science & software engineering.
+
+            After graduating with a Bachelor's in Computer Science, I worked professionally
+
+            as a software engineer building enterprise web applications for Fortune 500 companies.
+
+            While doing all of that, I documentned my coding journey on YouTube - trying to enlighten
+
+            the next generation of developers and help them navigate the crazy world that is software
+
+            development & computer science.
+
+            Before I knew it, that online presence took on a life of its own, to the point where I knew
+
+            I needed to make the jump from software engineering to full time content creator, and it's
+
+            the best decision I ever made.
+
+            Now, I make videos about creating cool shit like this terminal website, and hosting my
+
+            podcast 'Decoded w/ Forrest Knight.' What most people don't know, and will only know
+
+            because they're reading this right now, is that I also run a creative & media agency.
+
+            We partner with clients to drive their business outcomes using modern marketing strategies.`,
+                            el
+                        );
+                        break;
+                    }
+                    case "clear": {
+                        exe.innerHTML = "";
+                    }
+                    default: {
+                        doLoop("Unknown command", el);
+                    }
+                }
+            }
+
+            function doLoop(text, p) {
+                text = "> " + text;
+                let i = 0;
+                function type() {
+                    if (i < text.length) {
+                        if (text[i] === "^") {
+                            p.innerHTML += "<br>";
+                        } else if (text[i] === " ") {
+                            p.innerHTML += "&nbsp;";
+                        } else {
+                            p.innerHTML += text[i];
+                        }
+                        i++;
+                        setTimeout(type, 20);
+                    }
+                }
+                type();
+            }
+        </script>
+    </body>
+</html>

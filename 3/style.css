@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  min-height: 100vh;
+  background: #111;
+}
+
+span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+span::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 50%;
+  animation: moveParticles 2s linear infinite;
+}
+
+@keyframes moveParticles {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(300px);
+  }
+}

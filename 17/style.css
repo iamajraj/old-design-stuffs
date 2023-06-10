@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: "Courier New", Courier, monospace;
+}
+
+main {
+    margin: 5rem auto;
+    max-width: 1000px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+main h1 {
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 48px;
+}
+
+.cards {
+    flex-wrap: wrap;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    border: 1px solid whitesmoke;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    padding: 0 1rem;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card .title {
+    margin-top: 2.5rem;
+}
+
+.card .title h1 {
+    margin-left: 20px;
+    font-size: 30px;
+    text-align: end;
+}
+
+.hero {
+    display: flex;
+}
+
+.hero .product_image {
+    width: 100px;
+    height: 100px;
+}
+
+.hero .price {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.badge::before {
+    content: "#11";
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    top: 10px;
+    left: -40px;
+    width: 140px;
+    height: 20px;
+    transform: rotate(-40deg);
+    background-color: #ff391f;
+}
+
+.price h1 {
+    font-size: 50px;
+    color: #ff391f;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.price span {
+    color: grey;
+    font-size: 16px;
+}
+
+.container h1 {
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.btns {
+    width: 100%;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.container .btns a {
+    display: inline-block;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    background-color: #ff391f;
+    padding: 7px 14px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: 0.2s all ease-in-out;
+}
+
+.btns a:hover {
+    background-color: #f82509;
+    transform: scale(1.1);
+}
